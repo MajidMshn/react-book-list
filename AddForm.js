@@ -29,8 +29,9 @@ export default class componentName extends Component {
         }
     }
 
-    subForm(event) {
+   subForm(event) {
         event.preventDefault();
+        let { title, auther, year } = { ...this.state };
         let lastId = this.state.book.length;
         if (title && auther && year) {
             let newBook = {
