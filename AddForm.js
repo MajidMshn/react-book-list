@@ -32,13 +32,15 @@ export default class componentName extends Component {
     subForm(event) {
         event.preventDefault();
         let lastId = this.state.book.length;
-        let newBook = {
-            id: lastId + 1,
-            title: this.state.title,
-            auther: this.state.auther,
-            year: this.state.year
+        if (title && auther && year) {
+            let newBook = {
+                id: lastId + 1,
+                title: title,
+                auther: auther,
+                year: year
+            }
+            this.state.book.push(newBook);
         }
-        this.state.book.push(newBook);
 
         this.setState({ title: '', auther: '', year: '' });
     }
