@@ -40,7 +40,10 @@ export default class componentName extends Component {
                 auther: auther,
                 year: year
             }
-            this.state.book.push(newBook);
+          //  this.state.book.push(newBook);
+             this.setState({
+                book: [...this.state.book, newBook]
+            })
         }
 
         this.setState({ title: '', auther: '', year: '' });
